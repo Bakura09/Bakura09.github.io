@@ -1,0 +1,14 @@
+.container {
+  border: medium solid darkblue;
+  width: 50vw;
+  height: 100vh;
+  background-color: rgb(40, 139, 188);
+  margin: 0 auto;
+}
+
+h1 {
+  border: solid black;
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
