@@ -19,41 +19,94 @@ body {
   width: 80%;
   height: 400px;
   border: solid black;
+  border-radius: 10px;
   margin: 10px auto;
 }
 
-/* header,
-main,
-footer {
+/* Card-1 style */
+
+div.card-1 {
+  position: relative;
+  background-color: #563a9c;
+  padding-left: 2px;
+}
+
+div.card-1 h1,
+div.card-1 p {
+  text-align: center;
+}
+
+div.label {
   width: 100%;
-  height: 40%;
-  margin-bottom: 5px;
-  border: solid black;
+  height: 10%;
+  text-align: center;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-header {
-  background-color: #be5985;
+.card-1 .label:hover {
+  height: 80%;
 }
 
-main {
-  background-color: #adb2d4;
+/* Card-2 style */
+
+div.card-2 {
+  position: relative;
+  background-color: #563a9c;
 }
 
-footer {
-  background-color: #aa60c8;
+div.card-2 h1,
+div.card-2 p {
+  text-align: center;
 }
 
-.container {
-  width: 90%;
-  height: 400px;
+div.label_2 {
+  width: 10%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
   white-space: nowrap;
-  overflow-x: scroll;
+  transition: width 0.2s ease-out;
 }
 
-[class^="card"] {
-  width: 800px;
-  height: 800px;
-  background-color: black;
-  color: white;
-  display: inline-block;
-} */
+p.sticky-label {
+  height: 100%;
+  writing-mode: vertical-lr;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+div.label_2 p.sticky-content {
+  width: 85%;
+  overflow: hidden;
+  white-space: wrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.2s linear 0.3s; /* Add delay to match width transition */
+  text-align: left;
+}
+
+.card-2 .label_2:hover {
+  width: 80%;
+}
+
+.card-2 .label_2:hover .sticky-content {
+  visibility: visible;
+  opacity: 1;
+  /* transition-delay: 0s; Remove delay on hover */
+}
+
+.card-2 .label_2:not(:hover) .sticky-content {
+  transition-delay: 0s, 0.2s; /* Immediate visibility change, delayed opacity change */
+}
