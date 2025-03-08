@@ -10,8 +10,8 @@ body {
   margin: 0;
   background-color: #fff2f2;
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   place-items: center center;
 }
 
@@ -76,6 +76,8 @@ div.label_2 {
   overflow: hidden;
   white-space: nowrap;
   transition: width 0.2s ease-out;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 p.sticky-label {
@@ -109,4 +111,11 @@ div.label_2 p.sticky-content {
 
 .card-2 .label_2:not(:hover) .sticky-content {
   transition-delay: 0s, 0.2s; /* Immediate visibility change, delayed opacity change */
+}
+
+/* card-3 Style */
+
+div.card-3 {
+  background-color: #563a9c;
+  position: relative;
 }
